@@ -19,11 +19,15 @@ namespace Assets.Scripts
 
         // Tail Prefab
         public GameObject tailPrefab;
-        public GameObject gameOverMenu;
+
+        public GameObject gameManagerObject;
+        private GameManager gameManager;
 
         // Use this for initialization
         IEnumerator Start()
         {
+            gameManager = gameManagerObject.GetComponent<GameManager>();
+
             // Start function WaitAndPrint as a coroutine
             yield return StartCoroutine("StartMoving");
         }
@@ -60,13 +64,12 @@ namespace Assets.Scripts
                 // Remove the Food
                 Destroy(coll.gameObject);
 
-                //StopCoroutine("WaitAndPrint");
-                //yield return StartCoroutine("");
+                gameManager.UpdateScore();
             }
             // Collided with Tail or Border
             else if (coll.tag == "Border" || coll.tag == "Tail")
             {
-                gameOverMenu.GetComponent<GameManager>().SetGameOver();
+                gameManager.EndGame();
             }
         }
 
@@ -104,7 +107,7 @@ namespace Assets.Scripts
 
         IEnumerator StartMoving()
         {
-            while (!gameOverMenu.GetComponent<GameManager>().GameOver)
+            while (!gameManager.GameOver)
             {
                 if (tail.Count > 0)
                 {

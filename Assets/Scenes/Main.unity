@@ -354,7 +354,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 438.5}
+  m_AnchoredPosition: {x: 0, y: 275}
   m_SizeDelta: {x: 210, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &452098919
@@ -424,6 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverUI: {fileID: 9782280}
+  ScoreTextUI: {fileID: 1792551697}
 --- !u!4 &526173757
 Transform:
   m_ObjectHideFlags: 0
@@ -612,7 +613,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 526173756}
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -879,6 +880,11 @@ Prefab:
       propertyPath: gameOverMenu
       value: 
       objectReference: {fileID: 526173755}
+    - target: {fileID: 114617928455274928, guid: b4072906be915574d9ffb5dd841fb0bb,
+        type: 2}
+      propertyPath: gameManagerObject
+      value: 
+      objectReference: {fileID: 526173755}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4072906be915574d9ffb5dd841fb0bb, type: 2}
   m_IsPrefabParent: 0
@@ -1013,7 +1019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140, y: 438.5}
+  m_AnchoredPosition: {x: 140, y: 275}
   m_SizeDelta: {x: 200, y: 88.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1792551699
